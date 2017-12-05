@@ -179,7 +179,7 @@ class Item {
     public function custom_label_0($label ) {
         $node = new Node('custom_label_0');
         $label = $this->safeCharEncodeText( $label );
-        $this->nodes['g:custom_label_0'] = $node->value($label)->addCdata();
+        $this->nodes['custom_label_0'] = $node->value($label)->_namespace($this->namespace)->addCdata();
     }
 
     /**
@@ -188,7 +188,7 @@ class Item {
     public function custom_label_1($label ) {
         $node = new Node('custom_label_1');
         $label = $this->safeCharEncodeText( $label );
-        $this->nodes['g:custom_label_1'] = $node->value($label)->addCdata();
+        $this->nodes['custom_label_1'] = $node->value($label)->_namespace($this->namespace)->addCdata();
     }
 
     /**
@@ -197,7 +197,7 @@ class Item {
     public function custom_label_2($label ) {
         $node = new Node('custom_label_2');
         $label = $this->safeCharEncodeText( $label );
-        $this->nodes['g:custom_label_2'] = $node->value($label)->addCdata();
+        $this->nodes['custom_label_2'] = $node->value($label)->_namespace($this->namespace)->addCdata();
     }
 
     /**
@@ -206,7 +206,7 @@ class Item {
     public function custom_label_3($label ) {
         $node = new Node('custom_label_3');
         $label = $this->safeCharEncodeText( $label );
-        $this->nodes['g:custom_label_3'] = $node->value($label)->addCdata();
+        $this->nodes['custom_label_3'] = $node->value($label)->_namespace($this->namespace)->addCdata();
     }
 
     /**
@@ -215,7 +215,7 @@ class Item {
     public function custom_label_4($label ) {
         $node = new Node('custom_label_4');
         $label = $this->safeCharEncodeText( $label );
-        $this->nodes['g:custom_label_4'] = $node->value($label)->addCdata();
+        $this->nodes['custom_label_4'] = $node->value($label)->_namespace($this->namespace)->addCdata();
     }
 
 	/**
