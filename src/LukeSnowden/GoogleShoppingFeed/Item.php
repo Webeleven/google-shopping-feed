@@ -86,7 +86,7 @@ class Item {
 	public function title( $title ) {
 		$node = new Node('title');
 		$title = $this->safeCharEncodeText( $title );
-		$this->nodes['title'] = $node->value($title)->addCdata();
+		$this->nodes['title'] = $node->value($title)->addCdata()->_namespace($this->namespace);
 	}
 
 	/**
@@ -97,7 +97,7 @@ class Item {
 	public function link( $link ) {
 		$node = new Node('link');
 		$link = $this->safeCharEncodeURL( $link );
-		$this->nodes['link'] = $node->value( $link )->addCdata();
+		$this->nodes['link'] = $node->value( $link )->addCdata()->_namespace($this->namespace);
 	}
 
 	/**
