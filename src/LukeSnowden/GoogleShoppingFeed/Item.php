@@ -107,7 +107,8 @@ class Item {
 	 */
 	public function price( $price ) {
 		$node = new Node('price');
-		$this->nodes['price'] = $node->value(number_format($price,2,'.',''))->_namespace($this->namespace);
+		$price = number_format($price,2,'.','') . " BRL";
+		$this->nodes['price'] = $node->value($price)->_namespace($this->namespace);
 	}
 
 	/**
@@ -117,7 +118,8 @@ class Item {
 	 */
 	public function sale_price( $salePrice ) {
 		$node = new Node('sale_price');
-		$this->nodes['sale_price'] = $node->value(number_format($salePrice,2,'.',''))->_namespace($this->namespace);
+		$price = number_format($salePrice,2,'.','') . " BRL";
+		$this->nodes['sale_price'] = $node->value($price)->_namespace($this->namespace);
 	}
 
 	/**
