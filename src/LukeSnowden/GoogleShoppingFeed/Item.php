@@ -108,6 +108,8 @@ class Item {
 	public function price( $price ) {
 		$node = new Node('price');
 		$price = number_format($price,2,'.','') . " BRL";
+        $code = $this->googleShoppingFeed->getIso4217CountryCode();
+        $this->nodes['price'] = $node->value( $price . " {$code}" )->_namespace($this->namespace);
 		$this->nodes['price'] = $node->value($price)->_namespace($this->namespace);
 	}
 
@@ -117,9 +119,10 @@ class Item {
 	 * @return [type]            [description]
 	 */
 	public function sale_price( $salePrice ) {
-		$node = new Node('sale_price');
-		$price = number_format($salePrice,2,'.','') . " BRL";
-		$this->nodes['sale_price'] = $node->value($price)->_namespace($this->namespace);
+        $node = new Node('sale_price');
+        $salePrice = number_format($salePrice, 2, '.', '');
+        $code = $this->googleShoppingFeed->getIso4217CountryCode();
+        $this->nodes['sale_price'] = $node->value( $salePrice . " {$code}" )->_namespace($this->namespace);
 	}
 
 	/**

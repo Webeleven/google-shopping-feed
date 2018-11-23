@@ -17,6 +17,11 @@ class Feed {
 	 * @var string
 	 */
 	protected $version = '2.0';
+	
+    /**
+     * @var string
+     */
+    protected $iso4217CountryCode = 'BRL';
 
 	/**
 	 * [$items Stores the list of items for the feed]
@@ -93,6 +98,22 @@ class Feed {
 	public function link( $string ) {
 		$this->link = (string)$string;
 	}
+	
+    /**
+     * @param $code
+     */
+    public function setIso4217CountryCode( $code )
+    {
+        $this->iso4217CountryCode = $code;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIso4217CountryCode()
+    {
+        return $this->iso4217CountryCode;
+    }
 
 	/**
 	 * [channel description]
