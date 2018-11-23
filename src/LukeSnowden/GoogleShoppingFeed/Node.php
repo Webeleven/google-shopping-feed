@@ -78,10 +78,11 @@ class Node {
 	 * @return [type]         [description]
 	 */
 	public function attachNodeTo( $parent ) {
-		if( $this->cdata && ! preg_match( "#^<!\[CDATA#is", $this->value ) ) {
-			$this->value = "<![CDATA[{$this->value}]]>";
-		}
-		$parent->addChild( $this->name, $this->value, $this->_namespace );
+        $this->value = htmlspecialchars($this->value, ENT_XML1);
+        if( $this->cdata && ! preg_match( "#^<!\[CDATA#is", $this->value ) ) {
+            $this->value = "<![CDATA[{$this->value}]]>";
+        }
+        $parent->addChild( $this->name, $this->value, $this->_namespace );
 	}
 
 }
