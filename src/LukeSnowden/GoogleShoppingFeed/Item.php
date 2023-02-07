@@ -330,12 +330,26 @@ class Item {
 		$this->nodes['item_group_id'] = $node->value($id)->_namespace($this->namespace);
 	}
 
+	public function title_micro_banner( $title ) {
+		$node = new Node('title_micro_banner');
+		$title = $this->safeCharEncodeText( $title );
+		$this->nodes['title_micro_banner'] = $node->value(substr($title,0,50))->_namespace($this->namespace)->addCdata();
+	}
+
 	/**
 	 * [nodes description]
 	 * @return [type] [description]
 	 */
 	public function nodes() {
 		return $this->nodes;
+	}
+
+	public function makeNode($tag){
+		return (new Node($tag))->_namespace($this->namespace);
+	}
+
+	public function pushNode(Node $node) {
+		$this->nodes[$node->get('name')] = $node;
 	}
 
 	/**
@@ -415,5 +429,7 @@ class Item {
 			array('&#8226;','&#8221;','&#8220;','&#8217;','&#8216;','&trade;','&reg;','&deg;'),
 		$string );
 	}
+
+
 
 }
